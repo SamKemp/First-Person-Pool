@@ -39,6 +39,8 @@ public class BallBlack : MonoBehaviour {
 				{
 					ScoreUpdate.Score ++;
 					BallScoreAdded = true;
+
+                    UIManager.Win = true;
 				}
 			}
 		}

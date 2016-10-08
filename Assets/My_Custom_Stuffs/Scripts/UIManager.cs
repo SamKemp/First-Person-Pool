@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
 	
 	GameObject[] pauseObjects;
 	GameObject[] failObjects;
-	GameObject[] MobileInput;
+    GameObject[] winObjects;
+    GameObject[] MobileInput;
 
 	public static bool Failed = false;
-    
+    public static bool Win = false;
+
     float Version = 1.5f;
 
 	string Username;
@@ -26,7 +28,9 @@ public class UIManager : MonoBehaviour
 		hidePaused();
 		failObjects = GameObject.FindGameObjectsWithTag("ShowOnFail");
 		hideFailed();
-		MobileInput = GameObject.FindGameObjectsWithTag("MobileInput");
+        winObjects = GameObject.FindGameObjectsWithTag("ShowOnWin");
+        hideWin();
+        MobileInput = GameObject.FindGameObjectsWithTag("MobileInput");
 		if (Application.platform == RuntimePlatform.Android) {
 			showMobile ();
 		} else {
@@ -58,6 +62,10 @@ public class UIManager : MonoBehaviour
 		{
 			showFailed();
 		}
+        if(Win)
+        {
+            showWin();
+        }
 	}
 	
 	
@@ -65,7 +73,8 @@ public class UIManager : MonoBehaviour
 	public void Reload()
 	{
 		hideFailed();
-		Application.LoadLevel(Application.loadedLevel);
+        hideWin();
+        Application.LoadLevel(Application.loadedLevel);
 	}
 
 	//Quits the Game
@@ -105,8 +114,8 @@ public class UIManager : MonoBehaviour
 	public void showFailed()
 	{
 		Time.timeScale = 0;
-		foreach(GameObject h in failObjects){
-			h.SetActive(true);
+		foreach(GameObject g in failObjects){
+			g.SetActive(true);
 		}
 	}
 
@@ -117,8 +126,27 @@ public class UIManager : MonoBehaviour
 		}
 	}
 
-	//shows objects with MobileInput tag
-	public void showMobile()
+    //shows objects with ShowOnWin tag
+    public void showWin()
+    {
+        Time.timeScale = 0;
+        foreach (GameObject g in winObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with ShowOnWin tag
+    public void hideWin()
+    {
+        foreach (GameObject g in winObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    //shows objects with MobileInput tag
+    public void showMobile()
 	{
 		foreach(GameObject h in MobileInput){
 			h.SetActive(true);

@@ -21,5 +21,9 @@ public class ScoreUpdate : MonoBehaviour {
 		{
 			ScoreTXT.text = "Score: " + Score;
 		}
+        if(UIManager.Win)
+        {
+            ScoreTXT.text = "Score: " + Score;
+        }
 	}
 }
