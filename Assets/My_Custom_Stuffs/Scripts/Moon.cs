@@ -20,7 +20,7 @@ public class Moon : MonoBehaviour
     float MoonAngle = 140;
     float MoonSpeed = -10f;
     float MoonAngle2;
-    Vector3 MoonCenter = new Vector3(0, 0, 0);
+    //Vector3 MoonCenter = new Vector3(0, 0, 0);
 
     // Update is called once per frame
     void Update()

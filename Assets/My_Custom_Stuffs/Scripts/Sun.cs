@@ -20,7 +20,7 @@ public class Sun : MonoBehaviour
     float SunAngle = 220;
     float SunSpeed = 10f;
     float SunAngle2;
-    Vector3 SunCenter = new Vector3(0, 0, 0);
+    //Vector3 SunCenter = new Vector3(0, 0, 0);
 
 	// Update is called once per frame
 	void Update()

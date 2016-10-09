@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public static bool Win = false;
 
     float Version = 1.5f;
+	
 
 	string Username;
 
@@ -31,9 +32,12 @@ public class UIManager : MonoBehaviour
         winObjects = GameObject.FindGameObjectsWithTag("ShowOnWin");
         hideWin();
         MobileInput = GameObject.FindGameObjectsWithTag("MobileInput");
-		if (Application.platform == RuntimePlatform.Android) {
+		if (Application.platform == RuntimePlatform.Android)
+		{
 			showMobile ();
-		} else {
+		}
+		else
+		{
 			hideMobile ();
 		}
 
@@ -73,6 +77,7 @@ public class UIManager : MonoBehaviour
 	public void Reload()
 	{
 		hideFailed();
+		Win = false;
         hideWin();
         Application.LoadLevel(Application.loadedLevel);
 	}
@@ -97,14 +102,16 @@ public class UIManager : MonoBehaviour
 	}
 	
 	//shows objects with ShowOnPause tag
-	public void showPaused(){
+	public void showPaused()
+	{
 		foreach(GameObject g in pauseObjects){
 			g.SetActive(true);
 		}
 	}
 	
 	//hides objects with ShowOnPause tag
-	public void hidePaused(){
+	public void hidePaused()
+	{
 		foreach(GameObject g in pauseObjects){
 			g.SetActive(false);
 		}
@@ -120,7 +127,8 @@ public class UIManager : MonoBehaviour
 	}
 
 	//hides objects with failObjects tag
-	public void hideFailed(){
+	public void hideFailed()
+	{
 		foreach(GameObject g in failObjects){
 			g.SetActive(false);
 		}
