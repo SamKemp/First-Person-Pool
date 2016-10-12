@@ -3,7 +3,6 @@ Android
 B:/ProgramFiles/Unity/Editor/Data/Managed/UnityEngine.dll
 B:/ProgramFiles/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 B:/ProgramFiles/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
-B:/ProgramFiles/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
 B:/ProgramFiles/Unity/Editor/Data/Managed/UnityEditor.dll
 B:/ProgramFiles/Unity/Editor/Data\Managed/Mono.Cecil.dll
 B:/ProgramFiles/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll
