@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 	public static bool Failed = false;
     public static bool Win = false;
 
-    float Version = 1.5f;
+    string Version = "BETA 1.5";
 	
 
 	string Username;
@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     // Use this for initialization
     void Start ()
 	{
+        ScoreUpdate.Score = 0;
 		Failed = false;
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
@@ -66,9 +67,17 @@ public class UIManager : MonoBehaviour
 		{
 			showFailed();
 		}
+        else
+        {
+            hideFailed();
+        }
         if(Win)
         {
             showWin();
+        }
+        else
+        {
+            hideWin();
         }
 	}
 	
@@ -79,6 +88,7 @@ public class UIManager : MonoBehaviour
 		hideFailed();
 		Win = false;
         hideWin();
+        ScoreUpdate.Score = 0;
         Application.LoadLevel(Application.loadedLevel);
 	}
 
@@ -95,7 +105,8 @@ public class UIManager : MonoBehaviour
 		{
 			Time.timeScale = 0;
 			showPaused();
-		} else if (Time.timeScale == 0){
+		} else if (Time.timeScale == 0)
+        {
 			Time.timeScale = 1;
 			hidePaused();
 		}
